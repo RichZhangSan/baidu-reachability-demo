@@ -1,0 +1,60 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
+  color: #25332f;
+  background: #f3f0e9;
+  font-synthesis: none;
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 0; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+.shell { display: grid; grid-template-columns: minmax(0, 1fr) 380px; height: 100vh; padding: 18px; gap: 18px; }
+.map-panel { position: relative; min-height: 0; overflow: hidden; border-radius: 18px; background: #dfe8e3; box-shadow: 0 14px 40px rgba(57, 71, 65, .12); }
+.map { width: 100%; height: 100%; min-height: 0; }
+.map-hint { position: absolute; top: 18px; left: 18px; padding: 9px 13px; border-radius: 99px; color: #38584c; background: rgba(255,255,255,.88); font-size: 12px; letter-spacing: .04em; }
+.map-status { position: absolute; inset: 50% auto auto 50%; transform: translate(-50%, -50%); padding: 16px 20px; border-radius: 12px; background: rgba(255,255,255,.92); color: #5d6c65; }
+.sidebar { overflow: auto; padding: 34px 26px 26px; border-radius: 18px; background: #fbfaf6; box-shadow: 0 14px 40px rgba(57, 71, 65, .1); }
+.eyebrow { color: #7c9a8c; font-size: 10px; font-weight: 700; letter-spacing: .16em; }
+h1 { margin: 10px 0 8px; color: #293d35; font-family: Georgia, serif; font-size: 38px; font-weight: 500; letter-spacing: -.04em; }
+.intro { margin: 0 0 28px; color: #78827e; font-size: 13px; line-height: 1.8; }
+.field-label { margin-bottom: 9px; color: #78827e; font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+.search-wrap { position: relative; }
+#search { width: 100%; padding: 13px 14px; border: 1px solid #d9dfd8; border-radius: 10px; outline: none; background: #fff; color: #32483f; }
+#search:focus { border-color: #6a9c87; box-shadow: 0 0 0 3px rgba(106,156,135,.12); }
+.suggestions { position: absolute; z-index: 10; top: calc(100% + 5px); right: 0; left: 0; overflow: hidden; border-radius: 9px; background: #fff; box-shadow: 0 10px 28px rgba(39, 60, 51, .16); }
+.suggestion { display: block; width: 100%; padding: 11px 13px; border: 0; border-bottom: 1px solid #eff2ee; background: #fff; color: #41574d; text-align: left; font-size: 12px; }
+.suggestion:hover { background: #eef5f0; }
+.selected-point { min-height: 34px; padding: 9px 2px 0; color: #9aa39e; font-size: 11px; line-height: 1.5; }
+.section { margin-top: 24px; }
+.segmented, .chips { display: flex; gap: 6px; }
+.segmented button, .chips button { flex: 1; padding: 10px 5px; border: 1px solid #dfe5df; border-radius: 8px; background: transparent; color: #78827e; font-size: 12px; }
+.segmented button.active, .chips button.active { border-color: #5f927c; background: #e8f1eb; color: #386b56; font-weight: 700; }
+.primary-button { width: 100%; margin-top: 30px; padding: 14px; border: 0; border-radius: 10px; background: #416f5d; color: white; font-weight: 700; letter-spacing: .03em; }
+.primary-button:hover { background: #315d4b; }
+.primary-button:disabled { cursor: wait; opacity: .6; }
+.notice { min-height: 35px; padding: 12px 2px 0; color: #8a958f; font-size: 11px; line-height: 1.5; }
+.notice.error { color: #b35d51; }
+.notice.success { color: #397255; }
+.notice.muted { color: #9b8867; }
+.result-card { margin-top: 20px; padding: 16px; border: 1px solid #e3e8e1; border-radius: 12px; background: #f8faf6; }
+.result-title { color: #849189; font-size: 10px; font-weight: 700; letter-spacing: .1em; }
+.result-summary { margin-top: 9px; color: #455c50; font-size: 13px; line-height: 1.6; }
+.legend { display: flex; align-items: center; gap: 7px; margin-top: 15px; color: #8b9790; font-size: 10px; }
+.legend span { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #6aa892; }
+.api-note { margin-top: 22px; padding-top: 18px; border-top: 1px solid #e7eae5; color: #9a9e99; font-size: 10px; line-height: 1.7; }
+.api-note strong { color: #65766d; font-size: 11px; }
+.api-note p { margin: 6px 0 0; }
+@media (max-width: 1150px) {
+  .shell { grid-template-columns: minmax(0, 1fr) 340px; padding: 10px; gap: 10px; }
+}
+@media (max-width: 820px) {
+  .shell { grid-template-columns: 1fr; grid-template-rows: minmax(360px, 52vh) auto; height: auto; min-height: 100vh; }
+  .sidebar { padding: 26px 22px 24px; }
+  h1 { font-size: 34px; }
+}
+@media (max-width: 480px) {
+  .shell { padding: 7px; gap: 7px; }
+  .map-hint { top: 10px; left: 10px; font-size: 11px; }
+  .sidebar { padding: 22px 18px 20px; }
+  .intro { margin-bottom: 22px; }
+}

@@ -1,0 +1,18 @@
+# Dependencies and generated files
+node_modules/
+dist/
+coverage/
+*.log
+*.zip
+
+# Local credentials: commit only the empty example
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# OS and editor files
+.DS_Store
+.vscode/
+.idea/
